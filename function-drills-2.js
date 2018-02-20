@@ -44,37 +44,52 @@ jediName('George', 'Colon');
 // decoder('craft block argon meter bells brown croon droop');
 
 
-function days(month, leapYear) {
-    if(month === "February" && leapYear === true) {
-        console.log(`${month} has 29 days.`);
-    } else if(month === "February" && leapYear === false) {
-        console.log(`${month} has 28 days.`);
-    }
-  switch(month) {
-      case "January":
-      case "March":
-      case "May":
-      case "July":
-      case "August":
-      case "October":
-      case "December":
-        console.log(`${month} has 31 days.`);
-        break;
+// function days(month, leapYear) {
+//     if(month === "February" && leapYear === true) {
+//         console.log(`${month} has 29 days.`);
+//     } else if(month === "February" && leapYear === false) {
+//         console.log(`${month} has 28 days.`);
+//     }
+//   switch(month) {
+//       case "January":
+//       case "March":
+//       case "May":
+//       case "July":
+//       case "August":
+//       case "October":
+//       case "December":
+//         console.log(`${month} has 31 days.`);
+//         break;
 
-      case "September":
-      case "April":
-      case "June":
-      case "November":
-        console.log(`${month} has 30 days.`);
-        break;
+//       case "September":
+//       case "April":
+//       case "June":
+//       case "November":
+//         console.log(`${month} has 30 days.`);
+//         break;
     
-    default:
-        throw new Error("Must provide a valid month.");
-        break;
+//     default:
+//         throw new Error("Must provide a valid month.");
+//         break;
 
-}
-}
+// }
+// }
 
-days("February", true);
+// days("February", true);
 //days("November");
 //days("blah");
+
+function rps(num){
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    if (num === 1 && randomNo === 3 || num === 3 && randomNo === 2 || num === 2 && randomNo === 1 ){
+        return 'You win!';
+    } else if (num === 1 && randomNo === 2 || num === 2 && randomNo === 3 || num === 3 && randomNo === 1){
+        return 'You lose';
+    } else if ( num === randomNo){
+        return "It's a tie!";
+    } else if ( typeof num !== 'number' || num > 3 || num < 1){
+        throw Error('Valid number please...');
+    }    
+}
+
+rps(3);
